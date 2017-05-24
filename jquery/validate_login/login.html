@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Login Form with Email Password Link</title>
+	<link rel="stylesheet" media="screen" href="css/screen.css">
+	<script src="validate/lib/jquery.js"></script>
+	<script src="validate/dist/jquery.validate.js"></script>
+	<script>
+	$(function() {
+		// highlight
+		var elements = $("input[type!='submit'], textarea, select");
+		elements.focus(function() {
+			$(this).parents('li').addClass('highlight');
+		});
+		elements.blur(function() {
+			$(this).parents('li').removeClass('highlight');
+		});
+
+		$("#forgotpassword").click(function() {
+			$("#password").removeClass("required");
+			$("#login").submit();
+			$("#password").addClass("required");
+			return false;
+		});
+
+		$("#login").validate()
+	});
+	</script>
+</head>
+<body>
+<div id="page">
+	<div id="header">
+		<h1>登录</h1>
+	</div>
+	<div id="content">
+		<p id="status"></p>
+		<form action="" method="get" id="login">
+			<fieldset>
+				<legend>用户详情</legend>
+				<ul>
+					<li>
+						<label for="email">
+							<span class="required">用户名/邮件：</span>
+						</label>
+						<input id="email" name="email" class="text required email" type="text">
+						<label for="email" class="error">请输入合法合理的用户名</label>
+					</li>
+					<li>
+						<label for="password">
+							<span class="required">密码：</span>
+						</label>
+						<input name="password" type="password" class="text required" id="password" minlength="4" maxlength="20">
+					</li>
+					<li>
+						<label class="centered info"><a id="forgotpassword" href="#">忘记密码</a>
+						</label>
+					</li>
+				</ul>
+			</fieldset>
+			<fieldset class="submit">
+				<input type="submit" class="button" value="点击登录">
+			</fieldset>
+			<div class="clear"></div>
+		</form>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+	</head>
+	<body>
+		<span>resize次数：</span><span id="times">0</span>
+	</body>
+	<script>
+	$(window).resize(function(){
+		$('#times').text(parseInt($('#times').text())+1);
+	});
+	</script>
+	
+</html>

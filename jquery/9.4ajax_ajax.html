@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/jscript" src="js/jquery-3.2.1.js"></script>
+	</head>
+	<body>
+		<label for="">ajax跨域方式验证用户名</label>
+		<div>
+			用户名：<input type="text" id="username" placeholder="请输入用户名"/>
+			
+		</div>
+		<div>
+			<span id="msg">获取信息显示在这儿</span>
+			<br />
+			<span id="get_msg_do">点击获取</span>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			$("#get_msg_do").click(function(){
+				var name=$("#username").val();
+				var urll="http://maizi.itpaimai.com/jquery/ajax";
+				var data={username:name};
+				$.ajax({
+					type:'get',
+					url:urll,
+					data:data,
+					dataType:'jsonp',
+					success:function(msgs){
+						$("#msg").text(msgs)
+					},
+					error:function(){
+						$("#msg").text('link fail')
+					},
+				});
+				
+			})
+		});
+	</script>
+</html>

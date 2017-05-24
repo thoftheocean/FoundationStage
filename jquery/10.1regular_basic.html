@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/jscript" src="js/jquery-3.2.1.js"></script>
+	</head>
+	<body>
+		<label for="">用户名</label>
+		<br />
+		<span id="check_username">检测用户名</span>
+		<input type="text" id="t_username" placeholder="请输入用户名" />
+		<br/>
+		<br/>
+		<label for="">邮箱</label>
+		<br />
+		<span id="check_email">检测邮箱</span>
+		<input type="text" id="t_email" placeholder="请输入邮箱" />
+		<br/>
+		<br/>
+		<label for="">手机号码</label>
+		<br />
+		<span id="check_phone">检测手机号</span>
+		<input type="text" id="t_phone" placeholder="请输入手机号码" />
+	</body>
+	<script>
+		$(function(){
+			//用户名
+			$("#check_username").click(function(){
+				var str=$("#t_username").val();
+				var ret=/^[a-zA-Z][a-zA-Z0-9]{5,20}$/;
+				if(ret.test(str)){
+					alert('用户名正确')
+				}else{
+					alert('用户名错误')
+				}
+			})
+			//邮箱
+			$("#check_email").click(function(){
+				var str=$("#t_email").val();
+				var ret=/^[\w]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+				if(ret.test(str)){
+					alert('邮箱正确')
+				}else{
+					alert('邮箱错误')
+				}
+			})
+			//手机
+			$("#check_phone").click(function(){
+				var str=$("#t_phone").val();
+				var ret=/^[\d]{5,20}$/;
+				if(ret.test(str)){
+					alert('手机号正确')
+				}else{
+					alert('手机号错误')
+				}
+			})
+		});
+	</script>
+</html>

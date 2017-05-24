@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+				cursor: pointer;
+			}
+			li{list-style: none;clear: both;}
+			div{margin:0 auto; width: 100%; clear: both;text-align: center;}
+			span{
+			width: 200px;
+			height: 40px; 
+			display: block;
+			border: 1px solid #000;
+			float: left;
+			text-align: center;
+			vertical-align: middle;}
+			.hexi{background: red;}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li id="li-1"><span class="class_1">class_1</span><span class="class_1">class_1</span><span class="class_1">class_1</span></li>
+			<li id="li-2"><span class="class_2">class_2</span><span class="class_2">class_2</span><span class="class_2">class_2</span></li>
+			<li id="li-3"><span id="id_1">id_1</span><span id="id_2">id_2</span><span id="id_3">id_3</span></li>
+			<li id="li-4"><span >normal</span><span >nomal</span><span >nomal</span></li>
+			<li id="li-5"><span ><a href="http://www.baidu.com">百度</a></span><span >阿里</span><span>新浪</span></li>
+		</ul>
+		<br />
+		<br />
+		<hr />
+		<h2>这是操作按钮区域</h2>
+		<span id="sp1">id1选择器</span>
+		<span id="sp2">id2选择器</span>
+		<span id="sp3">id3选择器</span>
+		<span id="sp4">class_1选择器</span>
+		<span id="sp5">class_2选择器</span>
+		<span id="sp6">span选择器</span>
+		<span id="sp7">#id_1#id_2#id_3并列选择器</span>
+		<span id="sp8">#class_1,class_2并列选择器</span>
+		<span id="sp9">#id_1,class_1并列选择器</span>
+		<span id="sp10">ul>span家族选择器</span>
+	</body>
+	<script>
+		$(function(){
+		//id选择器
+//		$("#sp1").click(function(){
+//			$("#id_1").toggleClass('hexi')	
+//		});//当sp1点击就执行class_1
+//		$("#sp2").click(function(){
+//			$("#id_2").toggleClass('hexi')	
+//		});//当sp2点击就执行class_2
+//		$("#sp3").click(function(){
+//			$("#id_3").toggleClass('hexi')	
+//		});//当sp3点击就执行class_3
+//		})
+		//class选择器
+//		$("#sp4").click(function(){
+//			$(".class_1").toggleClass('hexi')	
+//		});//当sp4点击就执行class_1
+//		$("#sp5").click(function(){
+//			$(".class_2").toggleClass('hexi')	
+//		});//当sp5点击就执行class_2
+//	
+//		})
+		
+		//元素选择器
+//		$("#sp6").click(function(){
+//			$("span").toggleClass('hexi')	
+//		});//当sp6点击就执行span，其他元素选择器使用方法类同。
+		
+		//组合选择器
+		//1并列选择器 div span p class等
+//		$("#sp7").click(function(){
+//			$("#id_1,#id_2,#id_3").toggleClass('hexi')	;
+//		});
+//		$("#sp8").click(function(){
+//			$(".class_1,.class_2").toggleClass('hexi')	;
+//		});
+//		$("#sp9").click(function(){
+//			$("#id_1,.class_1").toggleClass('hexi')	;
+//		});
+		//2家族选择器 
+		$("#sp10").click(function(){
+			$("ul span").toggleClass('hexi')	;
+		});
+		})
+	</script>
+</html>

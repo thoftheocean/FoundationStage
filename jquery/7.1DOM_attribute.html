@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+		<style type="text/css">
+			span{
+				border: 1px solid aquamarine;
+				margin: 3px;
+				cursor: pointer;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<hr />
+		<label for=""> 属性操作:</label>
+		<span id='attr_get'>获取属性:</span>
+		<span id='attr_set'>设置属性:</span>
+		<span id='attr_remove'>删除属性:</span>
+		<div id="img_src" >
+			<img src="img/maizi.jpg" alt="" />
+		</div>
+	</body>
+	<script>
+		$(function(){
+			//属性操作 获取设置 删除
+			$('#attr_get').click(function(){
+				alert($('#img_src img').attr('src'))
+			})
+			
+			$('#attr_set').click(function(){
+				alert($('#img_src img').attr('src','img/horse.jpg'))
+			})
+			$('#attr_remove').click(function(){
+				alert($('#img_src img').removeAttr('src'))
+			})
+		})
+	</script>
+</html>

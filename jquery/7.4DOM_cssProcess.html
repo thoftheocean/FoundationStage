@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+		<style type="text/css">
+			span{
+				border: 1px solid aquamarine;
+				margin: 3px;
+				cursor: pointer;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<hr />
+		<label for=""> 属性操作:</label>
+		<span id='attr_get'>获取属性:</span><span id='attr_set'>设置属性:</span><span id='attr_remove'>删除属性:</span>
+		<div id="img_src" >
+			<img src="img/maizi.jpg" alt="" />
+		</div>
+		
+	    <br />
+	    <br] />
+	    <label for=""> 节点内容获取：</label>
+	    <span id="node_html">html:</span><span id="node_text">html:</span><span id="node_val">html:</span>
+	    <div id="node_get">
+	    	<div id="get_html"><h6>这是h6的文本</h6></div>
+	    	<div id="get_text"><h6>这是h6的文本</h6></div>
+	    	<input type="text" id="get_val" value="帅哥，约吗？" />
+	    </div>
+	    <br />
+	    <br />
+	    <label for=""> 节点内容设置：</label>
+	    <span id="node_shtml">html:</span><span id="node_stext">html:</span><span id="node_sval">html:</span>
+	    <br />
+	    <br />
+	    <label for="">文档操作展示：</label>
+	    <br />
+	    <span>里层追加</span>
+	    <br />
+	    <span id="dom_add">追加【append】(后面追加):</span><span id="dom_pre_add">追加【preppend】(前面追加):</span>
+	    <span id="dom_to_add">追加到【appendTo】(后面追加):</span><span id="dom_preto_add">追加【preppendTo】(前面追加):</span>
+	    <div id="fabao">
+	    	<ul>
+	    		<li>追妹子的三大法宝：</li>
+	    		<li>坚持</li>
+	    		<li>不要脸</li>
+	    		<li>坚持不要脸</li>
+	    	</ul>
+	    </div>
+	    <br />
+	    <span>外层追加</span>
+	    <br />
+	    <span id="dom_after">追加【after】(后面追加):</span><span id="dom_before">追加【before】(前面追加):</span>
+	    <span id="dom_insert_affter">追加到【insertAffter】(后面追加):</span><span id="dom_insert_before">追加【insertBefore】(前面追加):</span>
+
+	    <div id="gongzi">
+	    	<ul>
+	    		<li>老板</li>
+	    		<li>涨工资吗？</li>
+	    	</ul>
+	    </div>
+	    
+	    <br />
+	 	<br />
+	 	<span id="dom_wrap">包裹【wrap】操作</span><span id="dom_unwrap">去掉包裹【unwrap】操作</span>
+		<div id="baoguo">
+			<p>hello</p>
+			<p>girls</p>
+			<p>!</p>
+		</div>
+		
+		<br />
+	 	<br />
+	 	<span id="dom_empty">清空【empty】操作</span><span id="dom_remove">删除【remove】操作</span><span id="dom_clone">复制【clone】操作</span>
+		<div id="shan">
+			<li id="node_empty">这个是empty</li>
+			<li id="node_remove">这个是remove</li>
+			<li id="node_clone">这个是clone</li>
+		</div>
+		
+		<br />
+	 	<br />
+	 	
+	 	<label for="">css操作</label>
+	 	<style>
+	 		.jingshang{color: red;}
+	 	</style>
+	 	<span id="dom_addClass">新增.class</span><span id="dom_removeClass">删除.class</span><span id="dom_toggleClass">切换.class</span>
+		<div id="dom_class">
+			这个是展示操作
+		</div>
+		
+		<br />
+	 	<br />
+	 	<span id="dom_css">普通编辑【color】</span><span id="dom_height">普通编辑【height】</span>
+		<div id="dom_css_set">
+			这里是css的基础操作
+		</div>
+		
+	</body>
+	<script>
+		$(function(){
+//			//属性操作 获取设置 删除
+//			$('#attr_get').click(function(){
+//				alert($('#img_src img').attr('src'))
+//			})
+//			
+//			$('#attr_set').click(function(){
+//				alert($('#img_src img').attr('src','img/horse.jpg'))
+//			})
+//			$('#attr_remove').click(function(){
+//				alert($('#img_src img').removeAttr('src'))
+//			})
+//			//获取html text val
+//			
+//			$("#node_html").click(function(){
+//				alert($("#get_html").html());
+//			});
+//			
+//			$("#node_text").click(function(){
+//				alert($("#get_text").text());
+//			});
+//			
+//			$("#node_val").click(function(){
+//				alert($("#get_val").val());
+//			});
+//			
+//			//设置html text val
+//			
+//			$("#node_shtml").click(function(){
+//				$("#get_html").html('<strong>man</strong>');
+//			});
+//			
+//			$("#node_stext").click(function(){
+//				$("#get_text").text("man");
+//			});
+//			
+//			$("#node_sval").click(function(){
+//				$("#get_val").val("不约");
+//			});
+//		//文档处理
+//			// append prepend appendTo prependTo
+//			$("#dom_add").click(function(){
+//				$("#fabao ul").append("<li>老师还有吗</li>");
+//			});
+//			$("#dom_pre_add").click(function(){
+//				$("#fabao ul").prepend("<li>老师，咋个追妹子啦</li>");
+//			});
+//			$("#dom_to_add").click(function(){
+//				$('<li>老师还有吗</li>').appendTo('#fabao ul');
+//			});
+//			$("#dom_preto_add").click(function(){
+//				$('<li>老师，咋个追妹子啦</li>').prependTo('#fabao ul');
+//			});
+//			// after before insertAfter inserBefore
+//			$("#dom_after").click(function(){
+//				$("#gongzi ul").after("<li>这个可以有！</li>");
+//			});
+//			$("#dom_before").click(function(){
+//				$("#gongzi ul").before("<li>嘿嘿</li>");
+//			});
+//			$("#dom_insert_affter").click(function(){
+//				$('<li>这个可以有</li>').insertAfter('#gongzi ul');
+//			});
+//			$("#dom_insert_before").click(function(){
+//				$('<li>嘿嘿</li>').insertBefore('#gongzi ul');
+//			});
+//			//wrap unwrap
+//			$("#dom_wrap").click(function(){
+//				$("#baoguo p").wrap("<div style='color:red;'></div>");
+//			});
+//			$("#dom_unwrap").click(function(){
+//				$("#baoguo p").unwrap("<div style='color:red;'></div>");
+//			});
+//			//empty remove clone
+//			$("#dom_empty").click(function(){
+//				$("#node_empty").empty();
+//			});
+//			$("#dom_remove").click(function(){
+//				$("#node_remove").remove();
+//			});
+//			$("#dom_clone").click(function(){
+//				alert($("#node_clone").clone().html());
+//			});
+
+			//css 类的操作
+			$("#dom_addClass").click(function(){
+				$("#dom_class").addClass('jingshang');
+			});
+			$("#dom_removeClass").click(function(){
+				$("#dom_class").removeClass('jingshang');
+			});
+			$("#dom_toggleClass").click(function(){
+				$("#dom_class").toggleClass('jingshang');
+			});
+			
+			//css基础操作
+			$("#dom_css").click(function(){
+				$("#dom_css_set").css('color','red');
+				$("#dom_css_set").css({border:'red solid 1px',height:'300px'});
+			})
+			$("#dom_height").click(function(){
+				$("#dom_css_set").height("200px")
+			})
+		})
+	</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>事件</title>
+	</head>
+	<body>
+	 
+	 <input type="button" value="test1" onclick="alert('this is test1')" />
+	 <input type="button" value="test2" onclick="fuc_test2()"/>
+	 <input type="button" value="test3" id='tes3'/>
+	 <input type="button" value="test4" id='tes4' />
+	 <input type="button" value="test5" id="tes5" />
+	 <input type="button" value="test6" id="tes6" />
+	 <input type="button" value="test7" id="tes7" />
+	 <script type="text/javascript">
+//	 	内联模型test2
+	 	function fuc_test2()
+	 	{
+	 		alert('this is test2');
+	 	}
+//	 	脚本模型test3 
+	 	var test3=document.getElementById('tes3');
+	 	test3.onclick=function(){
+	 		alert('this is test3');
+	 	}
+//	 	脚本模型test4 
+	 	function fuc_test4()
+	 	{
+	 		alert('this is a test4');
+	 	}
+	 	var test4=document.getElementById('tes4');
+	 	test4.onclick=fuc_test4;
+//	 	脚本模型test5删除一个事件 
+	 	var test5=document.getElementById('tes5')
+	 	var count=0;
+	 	test5.onclick=function() 
+	 	{
+	 		alert('this is test5');
+	 		alert(count++);
+	 		if(count==3)
+	 		{test5.onclick=null}
+	 	}
+//	 	脚本模型 test6
+	 	var test6=document.getElementById('tes6');
+	 	test6.onclick=function()
+	 	{alert('a');}
+	 	test6.onclick=function()
+	 	{ alert('a');}
+	 	test6.onclick=function()
+	 	{ alert('a');}
+	 	
+	 	var test7=document.getElementById('tes7');
+	 	test7.onclick=function(e)
+	 	{
+//	 		alert(e.type); //chrome浏览器中
+	 		var e= event || window.event;
+	 		alert(e);
+	 	}
+	 	
+//	 	DOM2模型
+	 </script>
+	</body>
+</html>

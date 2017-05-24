@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>第十节课：表单设计</title>
+	</head>
+	<body>
+		<form method="get">
+			账号：<input type="text" name="name" value="请输入用户名">
+			<br>
+			<br>
+			密码：<input type="password" name="password"  maxlength="16">		
+			<input type="hidden" value="隐藏的内容"  maxlength="16">
+			<br>
+			<br>
+			性别：<input type="radio" name="sex"> 男<input type="radio" name="sex">女
+			<br>
+			<br>
+			性别：<input type="checkbox"> 男<input type="checkbox">女
+			<br>
+			<br>
+			性别：<input type="checkbox"> 男<input type="checkbox" checked>女
+			<br>
+			<br>
+			<input type="submit"  value="提交">
+			<input type="reset"  value="重置">
+			<input type="button"  value="按钮">
+			<br>
+			<br>
+			自我介绍：
+			<br>
+			<textarea cols="60" rows="60" name="自我介绍"></textarea>
+			<br>
+			<br>
+			地址：
+			<select name="地址">
+				<option value="beijin">北京</option>
+				<option value="shanghai">上海</option>
+				<option value="guangdong">广东</option>
+				<option value="sichuan">四川</option>
+			</select>
+		</form>
+	</body>
+</html>

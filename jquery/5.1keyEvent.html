@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+	</head>
+	<body>
+		<label for="" id="click1">点击标签</label>
+		<br />
+		<label for="" id="hover1">悬停</label>
+		<br />
+		<input type="text" id="input1" name="maizi" placeholder="输入1"/>
+		<input type="text" id="input2" name="maizi" placeholder="输入up"/>
+		<input type="text" id="input3" name="maizi" placeholder="输入down"/>
+		<input type="text" id="input4" name="maizi" placeholder="输入press"/>
+		<span>显示效果</span><span id="target1"></span>
+	</body>
+	<script>
+		$(function(){
+//			//点击	
+//		$("#click1").click(function(){
+//			alert('点我');
+//		});
+//		
+//		//悬停
+//		$("#hover1").hover(function(){
+//			
+//			alert('来啦');
+//			
+//		},function(){
+//			
+//			alert('不送');
+//			
+//		});
+//		//blur 和focus 事件
+//		$("#input1").blur(function(){
+//			alert("blur事件");
+//		});
+//		
+//		$("#input1").focus(function(){
+//			alert("focus事件");
+//		});
+//		
+		//键盘事件 keyup keydown keypress
+		$("#input2").keyup(function(){
+			$("#target1").text($(this).val());
+		});
+		$("#input3").keydown(function(){
+			$("#target1").text($(this).val());
+		});
+		$("#input4").keypress(function(){
+			$("#target1").text($(this).val());
+		});
+	
+		
+	});
+		
+	
+	</script>
+	
+</html>

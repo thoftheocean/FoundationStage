@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			body{text-align: center;}
+			.main{width: 1000px;margin: 0 auto; background: indianred;}
+			.button_t{padding: 10px;}
+			.button_t span{margin: 0px 8px;padding: 0px 10px;border: 1px solid ;cursor: pointer;}
+			.meinv{margin: 5px;}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="button_t">
+				<span id="t_show">显示</span><span id="t_hide">隐藏</span><span id="t_toggle">切换</span>
+				<span id="t_slideUp">向上</span><span id="t_slideDown">向下</span><span id="t_slideToggle">切换</span>
+				<span id="t_fadeIn">淡入</span><span id="t_fadeOut">淡出</span><span id="t_fadeToggle">fadeToggle</span><span id="t_fadeTo">淡入自定义</span>
+				<!--<span id="t_animate"></span><span id="t_stop"></span><span id="t_delay"></span>-->
+				<div class="meinv">
+					<img src="img/meinv.jpg" alt="" />
+				</div>
+			</div>
+		</div>
+		<br />
+		<br />
+		<div class="main">
+			<div class="button_t">
+				<span id="t_animate">开始动画</span>
+				<span id="t_stop">停止动画</span>
+			</div>
+			<div class="shuige">
+				<img src="img/luhan.jpg" alt="" />
+			</div>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			//显示 隐藏 切换
+			$("#t_show").click(function(){
+				$(".meinv").show();
+			})
+			$("#t_hide").click(function(){
+				$(".meinv").hide();
+			})
+			$("#t_toggle").click(function(){
+				$(".meinv").toggle();
+			})
+				//向上 向下 切换
+			$("#t_slideUp").click(function(){
+				$(".meinv").slideUp();
+			})
+			$("#t_slideDown").click(function(){
+				$(".meinv").slideDown();
+			})
+			$("#t_slideToggle").click(function(){
+				$(".meinv").slideToggle();
+			})
+				//淡入 淡出 切换淡入自定义
+			$("#t_fadeIn").click(function(){
+				$(".meinv").fadeIn(10000);
+			})
+			$("#t_fadeOut").click(function(){
+				$(".meinv").fadeOut(10000);
+			})
+			$("#t_fadeToggle").click(function(){
+				$(".meinv").fadeToggle();
+			})
+			$("#t_fadeTo").click(function(){
+				$(".meinv").fadeTo("slow",0.66);
+			})
+			//animate delay stop
+			$("#t_animate").click(function(){
+				$(".shuige img").animate({height:'300px',opacity:'0.5'},5000);//毫秒
+				$(".shuige img").delay('slow').animate({height:'100px',opacity:'0.1'},5000);//毫秒
+			})
+			$("#t_stop").click(function(){
+				$(".shuige img").stop();//毫秒
+			})
+			
+		})
+	</script>
+</html>

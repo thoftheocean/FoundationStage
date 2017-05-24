@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+	</head>
+	<body style="height: 2000px;padding: 500px;">
+		<span>scroll次数：</span><span id="times">0</span>
+	</body>
+	<script>
+	$(window).scroll(function(){
+		$('#times').text(parseInt($('#times').text())+1);
+	});
+	</script>
+	
+</html>

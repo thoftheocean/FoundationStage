@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/jscript" src="js/jquery-3.2.1.js"></script>
+		<style type="text/css">
+			span{border: 1px solid lightgreen;cursor: pointer;}
+		</style>
+	</head>
+	<body>
+	<label for="">get获取手机信息</label>
+	<div>手机：<input type="text" name="phone" id="phone_g" placeholder="请输入手机号码"/>
+	<br />
+	<br />
+	</div>
+	<div>
+		<span id="get_msg">获取信息显示在这</span>
+		<br />
+		<br />
+		<span id="get_msg_do">点击获取</span>
+	</div>
+	</body>
+	<script>
+		$(function(){
+		//get 网址有误。
+		$("#get_msg_do").click(function(){
+			var phone=$("#phon_g").val();
+			var url='http://maizi.itpaimai.com/jquery/get';
+			var data={phone:phone};
+			$.get(url,data,function(msg){
+				if(msg.errNum=='-1'){
+                    $("#get_msg").text(msg.retMsg);
+                }else{
+                    $("#get_msg").text(msg.retData.supplier+':'+msg.retData.province+msg.retData.city+':'+msg.retData.suit);
+                }
+			},'jsonp');
+		})
+		
+		});
+	</script>
+</html>
